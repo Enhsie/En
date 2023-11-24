@@ -31,6 +31,16 @@
 
 <body>
   <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <!-- Add the YouTube link in the upper left corner -->
+        <a href="https://www.youtube.com/" target="_blank" class="youtube-link">
+          <img src="path/to/youtube-icon.png" alt="YouTube">
+        </a>
+        <!-- ... (your existing navigation code) ... -->
+      </div>
+  <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
@@ -59,6 +69,31 @@
                 <li class="nav-item">
                   <a class="nav-link" href="portfolio.html"> Portfolio </a>
                 </li>
+                <div class="audio-player">
+  <audio id="song1" src="陳忻玥 Vicky Chen -【炙愛 (女聲版) Fiery Love Vicky Version】Official MV.mp3"></audio>
+  <button onclick="playAudio('song1')">Play Song 1</button>
+</div>
+
+<div class="audio-player">
+  <audio id="song2" src="ØZI -【IF ONLY...】.mp3"></audio>
+  <button onclick="playAudio('song2')">Play Song 2</button>
+</div>
+
+<div class="audio-player">
+  <audio id="song3" src="理想混蛋 Bestards【不是因為天氣晴朗才愛你】 Official Lyric Video.mp3"></audio>
+  <button onclick="playAudio('song3')">Play Song 3</button>
+</div>
+<script>
+  function playAudio(audioId) {
+    var audio = document.getElementById(audioId);
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }
+</script>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact us</a>
                 </li>
@@ -459,6 +494,15 @@
                     <input type="text" placeholder="Full Name ">
                   </div>
                   <div>
+  <label for="countryCode">Country Code:</label>
+  <select id="countryCode" name="countryCode">
+    <!-- Add the list of country codes as options -->
+    <option value="+1">+1 (United States)</option>
+    <option value="+44">+44 (United Kingdom)</option>
+    <!-- Add more options as needed -->
+  </select>
+</div>
+                  <div>
                     <input type="text" placeholder="Phone Number">
                   </div>
                   <div>
@@ -467,6 +511,10 @@
                   <div>
                     <input type="text" placeholder="Message" class="input_message">
                   </div>
+                  <div>
+  <label for="callDate">Select Date:</label>
+  <input type="date" id="callDate" name="callDate">
+</div>
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn_on-hover">
                       Send
