@@ -1,0 +1,123 @@
+Studentld_CSS_Lab
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <style>
+        body {
+            color: #3498db; /* Light Blue */
+            background-color: #2c3e50; /* Dark Blue */
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        ul.navbar {
+            position: relative;
+            top: 1em;
+            left: 1em;
+            width: 10em;
+        }
+
+        ul.home {
+            position: absolute;
+            top: 2em;
+            left: 2em;
+            width: 8em;
+        }
+
+        ul.about {
+            position: absolute;
+            top: 3em;
+            left: 2em;
+            width: 8em;
+        }
+
+        ul.services {
+            position: absolute;
+            top: 4em;
+            left: 2em;
+            width: 8em;
+        }
+
+        ul.contact {
+            position: absolute;
+            top: 5em;
+            left: 2em;
+            width: 8em;
+        }
+
+        li {
+            list-style: none;
+            margin-bottom: 0.5em;
+        }
+
+        select {
+            margin-top: 1em;
+        }
+
+        @media all {
+            /* Styles for all devices */
+            body {
+                font-size: 16px;
+            }
+        }
+
+        @media print {
+            /* Styles for print media */
+            body {
+                color: black;
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>My Page</h1>
+    <h1>Welcome to my page, explore and enjoy!</h1>
+
+    <ul class="navbar">
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+
+    <select>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+
+    <ul class="home">
+        <li>Home Option 1</li>
+        <li>Home Option 2</li>
+        <li>Home Option 3</li>
+    </ul>
+
+    <ul class="about">
+        <li>About Option 1</li>
+        <li>About Option 2</li>
+        <li>About Option 3</li>
+    </ul>
+
+    <ul class="services">
+        <li>Services Option 1</li>
+        <li>Services Option 2</li>
+        <li>Services Option 3</li>
+        <li>Web Design</li>
+        <li>Graphic Design</li>
+        <li>Digital Marketing</li>
+    </ul>
+
+    <ul class="contact">
+        <li>Contact Option 1</li>
+        <li>Contact Option 2</li>
+        <li>Contact Option 3</li>
+    </ul>
+</body>
+</html>
