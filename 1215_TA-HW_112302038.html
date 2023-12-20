@@ -1,0 +1,95 @@
+1215_TA-HW_112302038
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <script>
+        // Function to add two numbers
+        function add(x, y) {
+            return x + y;
+        }
+
+        // Function to subtract two numbers
+        function subtract(x, y) {
+            return x - y;
+        }
+
+        // Function to multiply two numbers
+        function multiply(x, y) {
+            return x * y;
+        }
+
+        // Function to divide two numbers
+        function divide(x, y) {
+            if (y !== 0) {
+                return x / y;
+            } else {
+                throw new Error("Cannot divide by zero");
+            }
+        }
+
+        // Function to take user input, perform calculation, and display result
+        function performCalculation() {
+            try {
+                // Get user input for two numbers and the desired operation
+                var num1 = parseFloat(prompt("Enter the first number:"));
+                var num2 = parseFloat(prompt("Enter the second number:"));
+                var operation = prompt("Enter the operation (+, -, *, /):");
+
+                // Validate user input
+                if (isNaN(num1) || isNaN(num2) || !"+-*/".includes(operation)) {
+                    throw new Error("Invalid input. Please enter valid numbers and operation.");
+                }
+
+                // Perform the calculation based on the selected operation
+                var result;
+                switch (operation) {
+                    case '+':
+                        result = add(num1, num2);
+                        break;
+                    case '-':
+                        result = subtract(num1, num2);
+                        break;
+                    case '*':
+                        result = multiply(num1, num2);
+                        break;
+                    case '/':
+                        result = divide(num1, num2);
+                        break;
+                    default:
+                        throw new Error("Invalid operation. Please enter +, -, *, or /.");
+                }
+
+                // Display the result on the webpage
+                document.getElementById('result').innerText = "Result: " + result;
+            } catch (error) {
+                // Display error messages on the webpage
+                document.getElementById('result').innerText = "Error: " + error.message;
+            }
+        }
+
+        // Main loop to allow the user to perform multiple calculations
+        function mainLoop() {
+            while (true) {
+                performCalculation();
+
+                // Ask the user if they want to continue
+                var continueCalculation = prompt("Do you want to perform another calculation? (yes/no)").toLowerCase();
+                if (continueCalculation !== 'yes') {
+                    break; // Exit the loop if the user does not want to continue
+                }
+            }
+        }
+
+        // Call the main loop when the page loads
+        window.onload = mainLoop;
+    </script>
+</head>
+<body>
+    <!-- Display the result on the webpage -->
+    <div id="result"></div>
+</body>
+</html>
